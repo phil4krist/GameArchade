@@ -19,17 +19,17 @@ but avoid the red ones', fill = 'white', font = ('Helvetica', 20))
 #set up score display using label widget
 score = 0
 score_display = Label(window, text = "Score: " + str(score))
-score.display.pack()
+score_display.pack()
 
 # set up level display using widget label
 level = 1
 level_display = Label(window, text = 'Level: ' + str(level))
-level.diplay.pack()
+level_display.pack()
 
-#create an image object using the gif file
-player_image_file = PhotoImage(file = "greenChar.gif")
-#use image object to create a character at position 200, 360
-mychar = canvas.creat_image(200, 360, image = player_image_file)
+# create an image object using the gif file
+player_image = PhotoImage(file="greenChar.gif")
+# use image object to create a character at position 200, 360
+mychar = canvas.create_image(200, 360, image = player_image)
 
 #variables and lists needed for managing candy (database)
 candy_list = [] # list containing all candy created,  empty at start
@@ -65,40 +65,5 @@ def move_candy():
             canvas.coords(candy, xposition, 0, xposition+30, 30)
             # schedule this function to move candy again
             window.after(50, move_candy)
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
